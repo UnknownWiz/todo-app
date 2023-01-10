@@ -30,7 +30,7 @@ function App() {
   const newTodo = async (e) => {
     e.preventDefault(e);
     if (input === "") {
-      alert("Please enter a valid Todo");
+      alert(`Please enter a valid "To Do" Phrase`);
       return;
     }
     await addDoc(collection(db, "todos"), {
