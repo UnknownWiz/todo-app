@@ -2,11 +2,11 @@ import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 
 const style = {
-  li: `flex justify-between bg-slate-200 p-4 my-2 capitalize`,
-  liComplete: `flex justify-between bg-slate-400 p-4 my-2 capitalize`,
+  li: `flex justify-between bg-slate-200 p-4 my-2 font-bold capitalize`,
+  liComplete: `flex justify-between bg-gradient-to-r from-green-400 to-green-200 p-4 my-2 font-bold capitalize`,
   row: `flex`,
   text: `ml-2 cursor-pointer`,
-  textComplete: ` ml-2 cursor-pointer line-through`,
+  textComplete: ` ml-2 cursor-pointer decoration-2 line-through`,
   button: "cursor-pointer flex items-center",
 };
 

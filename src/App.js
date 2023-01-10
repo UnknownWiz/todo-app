@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineCheck, AiOutlinePlus } from "react-icons/ai";
 import ToDo from "./ToDo";
 import { db } from "./firebase";
 import {
@@ -18,7 +18,7 @@ const style = {
   heading: `text-3xl font-bold text-center text-gray-800 p-2`,
   form: `flex justify-between`,
   input: `border p-2 w-full text-xl`,
-  button: `border p-4 ml-2 bg-purple-500 text-slate-100`,
+  button: `border p-4 ml-2 bg-green-500 text-slate-100`,
   count: `text-center p-2`,
 };
 
@@ -61,15 +61,17 @@ function App() {
   };
 
   // Delete Todo
-const deleteTodo = async (id) => {
-    await deleteDoc(doc(db, 'todos', id))
-}
-
+  const deleteTodo = async (id) => {
+    await deleteDoc(doc(db, "todos", id));
+  };
 
   return (
     <div className={style.bg}>
       <div className={style.container}>
-        <h3 className={style.heading}>To-Do App</h3>
+        <h3 className={style.heading}>
+          The To-Do Checklist{" "}
+          <AiOutlineCheck className="inline align-baseline fill-green-500" />
+        </h3>
         <form
           className={style.form}
           onSubmit={newTodo}
@@ -79,7 +81,7 @@ const deleteTodo = async (id) => {
             onChange={(e) => setInput(e.target.value)}
             className={style.input}
             type="text"
-            placeholder="To Do"
+            placeholder="Things To Do"
           ></input>
           <button className={style.button}>
             <AiOutlinePlus size={30} />
